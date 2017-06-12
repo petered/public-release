@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='export-demo',
       author='Peter',
@@ -6,5 +6,7 @@ setup(name='export-demo',
       url='https://github.com/petered/export-demo.git',
       long_description='A tool to help export demo code',
       version=0,
-      packages=['export_demo'],
-      scripts=[])
+      install_requires=[],
+      packages=find_packages(),
+      scripts=[]
+      )
