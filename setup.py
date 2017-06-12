@@ -6,5 +6,5 @@ setup(name='export-demo',
       url='https://github.com/petered/export-demo.git',
       long_description='A tool to help export demo code',
       version=0,
-      packages=['export_repo'],
+      packages=['export_demo'],
       scripts=[])
