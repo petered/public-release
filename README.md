@@ -25,7 +25,7 @@ Now, create the repository that you'd like to release on github (We'll call it `
 
 Clone your new repository onto your computer, and copy the local path that the repo is stored in:
 
-Now, from within the environment if `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run, the following code to fill yout new repository with the release code, along with the setup code, which installs all dependencies (note that you need to copy the local path to your new repo).
+Now, from within the environment if `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run, the following code to fill yout new repository with the release code (`spiking_experiments.dynamic_networks.figures`) and all required code, along with the setup code, which installs all dependencies (note that you need to copy the local path to your new repo).
 
 ```
 from public_release.create_repo import copy_and_create_setup
