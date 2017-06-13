@@ -67,7 +67,7 @@ git clone https://github.com/petered/pdnn.git
 cd pdnn
 source setup.sh
 ```
-... Which will install the code and dependencies.  If everything installs without error, they can run the module of interest:
+... Which will install the code and dependencies.  (Note that these instructions are automatically added to the README.md of your new repository).  If everything installs without error, they can run the module of interest:
 
 ```
 python pdnn/figures.py
