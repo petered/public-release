@@ -5,11 +5,15 @@ This tool is useful if you have a demo script in you own code that you want to r
 
 Using this tool, you can select the script you want to run, search for all dependencies within your current repo, and move them to a self-contained demo repo.
 
-## To install
+## To install public-release
 
-`pip install -e git+http://github.com/petered/public-release.git#egg=public-release`
+In bash, within your current python environment, go:
 
-## Example:
+```
+pip install -e git+http://github.com/petered/public-release.git#egg=public-release
+```
+
+## To Create a Public Release:
 
 Suppose we want to make a public release of a project `spiking-experiments` that of the code required to generate all figures in a paper.  `spiking-experiments` is large repository with a lot of irrelevant stuff.  We have one function in this repo that we want to release to the public.
 
