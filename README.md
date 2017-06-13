@@ -7,4 +7,4 @@ Using this tool, you can select the script you want to run, search for all depen
 
 ## To install
 
-`pip install -e git+http://github.com/petered/export-demo.git#egg=export-demo`
+`pip install -e git+http://github.com/petered/public-release.git#egg=public-release`
