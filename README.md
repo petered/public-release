@@ -51,14 +51,25 @@ Now, after verifying that everything works, commit you code:
 
 ```
 cd ~/projects/pdnn
+git add *
 git commit -am 'first release'
 git push
 ```
 
 That's it, your code is released.
 
-## For others to install it:
+## For others to install and run your code
 
-Now, for others to install and run your code, they can just clone your repo, and run the setup script.
+Now, for others to install and run the code from your public release, they can just clone your repo, and run the setup script.
 
+```
+git clone https://github.com/petered/pdnn.git
+cd pdnn
+source setup.sh
+```
+... Which will install the code and dependencies.  If everything installs without error, they can run the module of interest:
+
+```
+python pdnn/figures.py
+```
 
