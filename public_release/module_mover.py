@@ -5,8 +5,8 @@ import os
 from shutil import rmtree
 import logging
 logging.basicConfig()
-PLATO_LOGGER = logging.getLogger('export-demo')
-PLATO_LOGGER.setLevel(logging.INFO)
+LOGGER = logging.getLogger('export-demo')
+LOGGER.setLevel(logging.INFO)
 
 
 def get_src_file(module):
@@ -73,7 +73,7 @@ def copy_modules_to_dir(object, destination_dir, root_package, code_subpackage=N
         with open(old_name_to_new_path[module_name], 'w') as f:
             f.write(txt)
 
-        logging.info('Copied {} -> {}'.format(module_path, old_name_to_new_path[module_name]))
+        LOGGER.info('Copied {} -> {}'.format(module_path, old_name_to_new_path[module_name]))
 
 
 if __name__ == '__main__':
