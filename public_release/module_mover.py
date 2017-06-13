@@ -13,7 +13,14 @@ def get_src_file(module):
     return module.__file__[:-1] if module.__file__.endswith('.pyc') else module.__file__
 
 
-def get_module_import_dict(object, just_own_package = True):
+def get_module_import_dict(object, just_own_package = True, remove_packages = True):
+    """
+    Given some code object (or the full name of a module), find all the modules that must be imported for this object to
+    run.
+    :param object:
+    :param just_own_package:
+    :return:
+    """
     if isinstance(object, (list, tuple)):
         dicts, names = zip(*[get_module_import_dict(ob, just_own_package=just_own_package) for ob in object])
         return {k: v for d in dicts for k, v in d.iteritems()}, names
@@ -30,7 +37,10 @@ def get_module_import_dict(object, just_own_package = True):
     else:
         modules = finder.modules
     modules[module.__name__] = module  # Don't forget yourself!
-    return {name: get_src_file(m) for name, m in modules.iteritems()}, module.__name__
+    module_name_to_module_path = {name: get_src_file(m) for name, m in modules.iteritems()}
+    if remove_packages:
+        module_name_to_module_path = {name: path for name, path in module_name_to_module_path.iteritems() if not (path.endswith('__init__.py') or path.endswith('__init__.pyc'))}
+    return module_name_to_module_path, module.__name__
 
 
 def copy_modules_to_dir(object, destination_dir, root_package, code_subpackage=None, helper_subpackage ='helpers', clear_old_package = False):
