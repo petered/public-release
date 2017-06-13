@@ -46,3 +46,19 @@ copy_and_create_setup(
 Now you will see that your new repo is populated by the demo-function, along with all modules on which it depends:
 
 ![](https://github.com/petered/data/raw/master/images/Screen%20Shot%202017-06-13%20at%204.33.28%20PM.png)
+
+Now, after verifying that everything works, commit you code:
+
+```
+cd ~/projects/pdnn
+git commit -am 'first release'
+git push
+```
+
+That's it, your code is released.
+
+## For others to install it:
+
+Now, for others to install and run your code, they can just clone your repo, and run the setup script.
+
+
