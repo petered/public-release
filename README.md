@@ -3,7 +3,7 @@ A small utility for exporting a script, along with all its dependencies, into a 
 
 This tool is useful if you have a demo script in you own code that you want to rease to the public, and you do not want to release your entire code-base because of confidentiality or the fact that your code is an embarassing mess.
 
-Using this tool, you can select the script you want to run, collect all modules upon which your script depends, and move them to a self-contained demo repo.  
+Using this tool, you can select the script you want to release, collect all modules upon which your script depends, and move them to a self-contained demo repo.  
 
 ## To install public-release
 
