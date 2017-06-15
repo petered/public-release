@@ -71,9 +71,11 @@ python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo"
 ```
 
 This will take you into a UI for creating a new repo which can easily be installed with pip later on.  First you're taken through a series of questions:
+
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.12.58%20PM.png)
 
 And then, after some setup:
+
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.13.31%20PM.png)
 
 
