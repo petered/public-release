@@ -21,7 +21,7 @@ pip install -e git+http://github.com/petered/public-release.git#egg=public-relea
 
 Suppose we want to make a public release of a project `spiking-experiments` that of the code required to generate all figures in a paper.  `spiking-experiments` is large repository with a lot of irrelevant stuff.  We have one function in this repo that we want to release to the public.
 
-![](https://github.com/petered/data/raw/master/images/Screen%20Shot%202017-06-13%20at%204.31.12%20PM.png)
+![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.35.48%20PM.png)
 
 From within the environment of `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run the following code to fill yout new repository with the release code (`spiking_experiments.dynamic_networks.figures`) and all required code, along with the setup code, which installs all dependencies (note that you need to copy the local path `/Users/peter/projects/pdnn` to your new repo).
 
