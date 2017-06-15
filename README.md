@@ -1,9 +1,7 @@
 # Public Release
-A small utility for exporting a script, along with all its dependencies, into a new repo in your code
+A small utility for exporting a python script, along with all its dependencies, into a new GitHub repository, so that it can easily be installed and run by other people.
 
-This tool is useful if you have a demo script in you own code that you want to rease to the public, and you do not want to release your entire code-base because of confidentiality or the fact that your code is an embarassing mess.
-
-Using this tool, you can select the script you want to release, collect all modules upon which your script depends, and create a repository on GitHub that others can easily use to install and run your code.
+This tool is useful if you have a demo script that you want to rease to the public, but you do not want to release your entire code-base because of confidentiality or the fact that your code is an embarassing mess.
 
 1. [Installing public-release](#installing-public-release)
 2. [Create a Public Release](#create-a-public-release)
@@ -11,7 +9,7 @@ Using this tool, you can select the script you want to release, collect all modu
 
 ## Installing public-release
 
-In bash, within your current python environment, go:
+In terminal, within the python environment of your current project, go:
 
 ```
 pip install -e git+http://github.com/petered/public-release.git#egg=public-release
@@ -43,23 +41,12 @@ create_public_release(
         '-e git+http://github.com/petered/plato.git@0.2.0#egg=plato',
         ]
     )
-
 ```
+(Obviously replace "petered" with your own GitHub user name, and changing the other fields as appropriate for your project).
 
 The code will ask for your github password in order to create a new repository.  If all is successful, you will get the message:
 
-```
-=============== SUCCESS! ===============
-Created the repo: https://github.com/petered/pdnn.git
-It exists locally at /Users/peter/projects/pdnn
-You can set up the repo with: 
-  $ cd /Users/peter/projects/pdnn; source setup.sh
-Our you can install the repo as source in your current environment with: 
-  $ pip install -e git+http://github.com/petered/pdnn.git#egg=pdnn
-A new user can install your repo with: 
-  $ git clone https://github.com/petered/pdnn.git; cd pdnn; source setup.sh
-========================================
-```
+![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%204.33.07%20PM.png)
 
 That's it, your code is released.  If you look at your [new repository](https://github.com/petered/pdnn), you will see that it has been populated by the function `figures.py`, which you wanted to release, along with all modules on which it depends:
 
