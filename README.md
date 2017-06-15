@@ -19,7 +19,7 @@ pip install -e git+http://github.com/petered/public-release.git#egg=public-relea
 
 ## Create a Public Release:
 
-Suppose we want to make a public release of a project `spiking-experiments` that of the code required to generate all figures in a paper.  `spiking-experiments` is large repository with a lot of irrelevant stuff.  We have one function in this repo that we want to release to the public.
+Suppose we want to make a public release of a function `figures.py`, which generates all the figures in a paper.  `figures.py` lives in a large project `spiking-experiments` (and depends on several modules in this project), which also includes a lot of irrelevant stuff that we don't want to relese.
 
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.35.48%20PM.png)
 
