@@ -62,7 +62,7 @@ public-release also lets you create a new git repo from scratch, and fills it wi
 After installing `public-release`, you can run 
 
 ```
-python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo"
+python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo()"
 ```
 
 This will take you into a UI for creating a new repo which can easily be installed with pip later on.  First you're taken through a series of questions:
