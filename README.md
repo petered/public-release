@@ -5,7 +5,11 @@ This tool is useful if you have a demo script in you own code that you want to r
 
 Using this tool, you can select the script you want to release, collect all modules upon which your script depends, and create a repository on GitHub that others can easily use to install and run your code.
 
-## To install public-release
+1. [Installing public-release](#installing-public-release)
+2. [Create a Public Release](#create-a-public-release)
+3. [Create a new repo from scratch](#create-a-new-repo-from-scratch)
+
+## Installing public-release
 
 In bash, within your current python environment, go:
 
@@ -13,7 +17,7 @@ In bash, within your current python environment, go:
 pip install -e git+http://github.com/petered/public-release.git#egg=public-release
 ```
 
-## To Create a Public Release:
+## Create a Public Release:
 
 Suppose we want to make a public release of a project `spiking-experiments` that of the code required to generate all figures in a paper.  `spiking-experiments` is large repository with a lot of irrelevant stuff.  We have one function in this repo that we want to release to the public.
 
@@ -62,7 +66,7 @@ That's it, your code is released.  If you look at your new repository, you will 
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.09.18%20PM.png)
 
 
-## To Create a new Repo from Scratch
+## Create a new repo from scratch
 
 After installing public release, you can You can run 
 
