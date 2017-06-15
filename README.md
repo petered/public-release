@@ -70,7 +70,7 @@ That's it, your code is released.  If you look at your [new repository](https://
 
 public-release also lets you create a new git repo from scratch, and fills it with the basic files (setup.py, requirements.txt, .gitignore, README.md, etc), so that it can be easily pip-installed by other users.  
 
-After installing public release, you can You can run 
+After installing public release, you can run 
 
 ```
 python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo"
