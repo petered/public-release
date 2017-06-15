@@ -57,4 +57,6 @@ A new user can install your repo with:
 ========================================
 ```
 
-That's it, your code is released.
+That's it, your code is released.  If you look at your new repository, you will see that it has been populated by the demo-function, along with all modules on which it depends:
+
+![](https://github.com/petered/data/raw/master/images/Screen%20Shot%202017-06-13%20at%204.33.28%20PM.png)
