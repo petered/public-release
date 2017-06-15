@@ -21,7 +21,7 @@ Suppose we want to make a public release of a function `figures.py`, which gener
 
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.35.48%20PM.png)
 
-From within the environment of `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run the following code to fill yout new repository with the release code (`spiking_experiments.dynamic_networks.figures`) and all required code, along with the setup code, which installs all dependencies (note that you need to copy the local path `/Users/peter/projects/pdnn` to your new repo).
+From within the environment of `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run the following code:
 
 ```
 from public_release.create_repo import create_public_release
@@ -44,7 +44,9 @@ create_public_release(
 ```
 (Obviously replace "petered" with your own GitHub user name, and changing the other fields as appropriate for your project).
 
-The code will ask for your github password in order to create a new repository.  If all is successful, you will get the message:
+When run, this code will ask for your github password in order to create a new repository.  It fills your new repository with the release code (`spiking_experiments.dynamic_networks.figures`) and all modules on which it depends.  It also creates setup code (`setup.sh`, `setup.py`, etc), which lets people easily install all dependencies required to make this repo run.
+
+If all is successful, you will get the message:
 
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%204.33.07%20PM.png)
 
@@ -57,7 +59,7 @@ That's it, your code is released.  If you look at your [new repository](https://
 
 public-release also lets you create a new git repo from scratch, and fills it with the basic files (setup.py, requirements.txt, .gitignore, README.md, etc), so that it can be easily pip-installed by other users.  
 
-After installing public release, you can run 
+After installing `public-release`, you can run 
 
 ```
 python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo"
