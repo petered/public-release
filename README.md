@@ -28,10 +28,10 @@ Clone your new repository onto your computer, and copy the local path that the r
 Now, from within the environment of `spiking-experiments`, install `public-release` (see installation instructions above).  You can then run, the following code to fill yout new repository with the release code (`spiking_experiments.dynamic_networks.figures`) and all required code, along with the setup code, which installs all dependencies (note that you need to copy the local path `/Users/peter/projects/pdnn` to your new repo).
 
 ```
-from public_release.create_repo import copy_and_create_setup
+from public_release.create_repo import create_public_release
 
 
-copy_and_create_setup(
+create_public_release(
     modules = 'spiking_experiments.dynamic_networks.figures',
     destination_dir='/Users/peter/projects/pdnn',
     root_package='pdnn',

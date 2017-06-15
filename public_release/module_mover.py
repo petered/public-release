@@ -30,12 +30,14 @@ def get_module_import_dict(object, just_own_package = True, remove_packages = Tr
         module = inspect.getmodule(object)
     module_file = get_src_file(module)
     finder = ModuleFinder()
+    this_package = module.__name__.split('.')[0]
+    LOGGER.info('Scanning Dependent Modules in {}.  This may take some time...'.format(this_package))
     finder.run_script(module_file)
     if just_own_package:
-        package = module.__name__.split('.')[0]
-        modules = {name: mod for name, mod in finder.modules.iteritems() if name.split('.')[0]==package}
+        modules = {name: mod for name, mod in finder.modules.iteritems() if name.split('.')[0]==this_package}
     else:
         modules = finder.modules
+    LOGGER.info('Scan Complete.  {} dependent modules found.'.format(len(modules)))
     modules[module.__name__] = module  # Don't forget yourself!
     module_name_to_module_path = {name: get_src_file(m) for name, m in modules.iteritems()}
     if remove_packages:
