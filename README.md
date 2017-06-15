@@ -60,3 +60,20 @@ A new user can install your repo with:
 That's it, your code is released.  If you look at your new repository, you will see that it has been populated by the function `figures.py`, which you wanted to release, along with all modules on which it depends:
 
 ![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.09.18%20PM.png)
+
+
+## To Create a new Repo from Scratch
+
+After installing public release, you can You can run 
+
+```
+python -c "from public_release.ui import ui_initialize_repo; ui_initialize_repo"
+```
+
+This will take you into a UI for creating a new repo which can easily be installed with pip later on.  First you're taken through a series of questions:
+![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.12.58%20PM.png)
+
+And then, after some setup:
+![](https://github.com/petered/data/blob/master/images/Screen%20Shot%202017-06-15%20at%203.13.31%20PM.png)
+
+
