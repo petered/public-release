@@ -52,7 +52,6 @@ def fill_repo_with_initial_files(
         with open('.gitignore', 'w') as f:
             f.write(dot_gitignore_text)
 
-        readme_file = 'README.md'
 
         if root_package is not None:
             try:
@@ -76,11 +75,13 @@ def fill_repo_with_initial_files(
                 subprocess.call('git remote add -t \* -f origin {}'.format(github_url), shell=True)
                 subprocess.call('git checkout master', shell=True)
 
+            readme_file = 'README.md'
             if not os.path.exists(readme_file):
                 with current_directory(destination_dir):
                     repo_name = subprocess.check_output('basename `git rev-parse --show-toplevel`', shell=True).replace('\n', '')
+                    pip_install_url = github_url_to_pip_install_url(github_url)
                     with open(readme_file, 'w') as f:
-                        f.write(readme_template.format(name=package_name, git_url=github_url, repo_name=repo_name, ))
+                        f.write(readme_template.format(name=package_name, git_url=github_url, repo_name=repo_name, pip_url=pip_install_url))
 
             if commit_and_push:
                 subprocess.call('git add .', shell=True)
@@ -90,6 +91,14 @@ def fill_repo_with_initial_files(
 
 def get_github_url(user_or_org, repo_name):
     return 'https://github.com/{user}/{name}.git'.format(user=user_or_org, name=repo_name)
+
+
+def github_url_to_repo_name(github_url):
+    return os.path.splitext(os.path.split(github_url)[1])[0]
+
+
+def github_url_to_pip_install_url(github_url):
+    return 'git+'+github_url+'#egg='+github_url_to_repo_name(github_url)
 
 
 def get_pip_install_path(user_or_org, repo_name):
@@ -136,12 +145,14 @@ def create_github_repo(user, repo_name, private=False, org_name=None, if_existin
     return github_url
 
 
-def print_repo_info(git_url, local_path, repo_name, github_user_or_org):
+def print_repo_info(git_url, local_path):
+    repo_name = github_url_to_repo_name(git_url)
+    pip_path = github_url_to_pip_install_url(git_url)
     print '='*15 + ' SUCCESS! ' + '='*15
     print 'Created the repo: {}'.format(git_url)
     print 'It exists locally at {}'.format(local_path)
     print 'You can set up the repo with: \n  $ cd {}; source setup.sh'.format(local_path)
-    print 'Our you can install the repo as source in your current environment with: \n  $ pip install -e {}'.format(get_pip_install_path(user_or_org=github_user_or_org, repo_name=repo_name))
+    print 'Our you can install the repo as source in your current environment with: \n  $ pip install -e {}'.format(pip_path)
     print 'A new user can install your repo with: \n  $ git clone {}; cd {}; source setup.sh'.format(git_url, repo_name)
     print '='*40
 
@@ -157,9 +168,10 @@ def is_valid_variable_name(name):
 
 def create_public_release(
         github_user,
-        modules,
         repo_name,
+        modules = None,
         root_package=None,
+        scope = 'project',
         destination_dir=None,
         private=False,
         organization=None,
@@ -191,14 +203,16 @@ def create_public_release(
         root_package = repo_name.replace('-', '_')
     assert is_valid_variable_name(root_package)
 
-    copy_modules_to_dir(
-        object=modules,
-        destination_dir=destination_dir,
-        root_package=root_package,
-        clear_old_package=clear_old_package,
-        code_subpackage=code_subpackage,
-        helper_subpackage=helper_subpackage,
-        )
+    if modules is not None:
+        copy_modules_to_dir(
+            object=modules,
+            destination_dir=destination_dir,
+            root_package=root_package,
+            clear_old_package=clear_old_package,
+            code_subpackage=code_subpackage,
+            helper_subpackage=helper_subpackage,
+            scope=scope,
+            )
 
     fill_repo_with_initial_files(
         package_name=repo_name,
@@ -216,7 +230,7 @@ def create_public_release(
         commit_and_push=True
         )
 
-    print_repo_info(git_url=github_url, local_path=destination_dir, repo_name=repo_name, github_user_or_org=github_user if organization is None else organization)
+    print_repo_info(git_url=github_url, local_path=destination_dir)
 
 
 @contextmanager

@@ -56,9 +56,9 @@ def get_module_import_dict(object, scope = 'project', remove_packages = True):
     return module_files, module.__name__
 
 
-def copy_modules_to_dir(object, destination_dir, root_package, code_subpackage=None, helper_subpackage ='helpers', clear_old_package = False):
+def copy_modules_to_dir(object, destination_dir, root_package, code_subpackage=None, helper_subpackage ='helpers', scope='project', clear_old_package = False):
 
-    modules, names = get_module_import_dict(object, scope='project')
+    modules, names = get_module_import_dict(object, scope=scope)
 
     if isinstance(names, basestring):
         names = [names]
