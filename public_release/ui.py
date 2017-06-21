@@ -73,7 +73,8 @@ def ui_initialize_repo():
         commit_and_push=True,
         )
 
-    print_repo_info(git_url=git_url, local_path=local_path, repo_name=name, github_user_or_org=github_user_or_org)
+    print_repo_info(git_url=git_url, local_path=local_path)
+
 
 if __name__ == '__main__':
     ui_initialize_repo()

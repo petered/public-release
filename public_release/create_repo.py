@@ -116,7 +116,7 @@ def create_github_repo(user, repo_name, private=False, org_name=None, if_existin
     github_url = get_github_url(user_or_org=org_name, repo_name=repo_name)
     api_path = 'https://api.github.com/user/repos' if user==org_name else 'https://api.github.com/orgs/{org}/repos'.format(org=org_name)
 
-    github_response = subprocess.check_output('curl -u \'{user}\' https://api.github.com/repos/{user}/{repo}'.format(user=org_name, repo=repo_name), shell=True)
+    github_response = subprocess.check_output('curl -u \'{user}\' https://api.github.com/repos/{user}/{repo}'.format(user=user, repo=repo_name), shell=True)
     # repo_exists = "Not Found" not in
     repo_does_not_exist = "Not Found" in github_response
     repo_exists = repo_name in github_response
@@ -242,4 +242,4 @@ def current_directory(path):
 
 
 if __name__ == '__main__':
-    create_public_release('artemis.plotting.demo_dbplot', '/Users/peter/projects/tests/artemistest5', root_package='dbplot_demo', repo_name='artemis_demo', clear_old_package=True)
+    create_public_release('artemis.plotting.demo_dbplot', '/Users/peter/projects/tests/artemistest5', root_package='dbplot_demo', clear_old_package=True)
