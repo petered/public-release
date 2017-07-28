@@ -5,7 +5,7 @@ This tool is useful if you have a demo script that you want to rease to the publ
 
 **Contents:**
 
-- [Installing public-release](#installing-public-release)
+- [Installing public-release](#installing-public-release): How to install the public-release package.
 - [Create a Public Release](#create-a-public-release): How to create a public release of your code on GitHub.
 - [Create a new repo from scratch](#create-a-new-repo-from-scratch): How to initialize a pip-installable repository on GitHub from scratch.
 
