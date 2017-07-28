@@ -3,9 +3,11 @@ A small utility for exporting a python script, along with all its dependencies, 
 
 This tool is useful if you have a demo script that you want to rease to the public, but you do not want to release your entire code-base because of confidentiality or the fact that your code is an embarassing mess.
 
-1. [Installing public-release](#installing-public-release)
-2. [Create a Public Release](#create-a-public-release)
-3. [Create a new repo from scratch](#create-a-new-repo-from-scratch)
+**Contents:**
+
+- [Installing public-release](#installing-public-release)
+- [Create a Public Release](#create-a-public-release): How to create a public release of your code on GitHub.
+- [Create a new repo from scratch](#create-a-new-repo-from-scratch): How to initialize a pip-installable repository on GitHub from scratch.
 
 ## Installing public-release
 
